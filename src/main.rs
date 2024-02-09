@@ -25,6 +25,7 @@ struct Config {
     order: DateOrder,
     separator: char,
     extension: String,
+    full_year: bool,
 }
 
 /// Touch a file with today's date
@@ -42,6 +43,10 @@ struct Args {
     /// Character to sepate the day month and year by
     #[arg(short, long)]
     extension: Option<String>,
+
+    /// For printing 01-01-2024 instead of 01-01-24
+    #[arg(short, long)]
+    full_year: bool,
 }
 
 impl Default for Config {
@@ -50,6 +55,7 @@ impl Default for Config {
             order: DateOrder::DMY,
             separator: '-',
             extension: String::from("md"),
+            full_year: false,
         }
     }
 }
@@ -59,16 +65,22 @@ fn main() -> anyhow::Result<()> {
         order,
         separator,
         extension,
+        full_year,
     } = confy::load("day", None)?;
     let args = Args::parse();
     let order = args.order.unwrap_or(order);
     let sep = args.separator.unwrap_or(separator);
     let ext = args.extension.unwrap_or(extension);
+    let full_year = args.full_year || full_year;
 
     let date = Local::now();
     let d = format!("{:02}", date.day());
     let m = format!("{:02}", date.month());
-    let y = format!("{:04}", date.year());
+    let y = if full_year {
+        format!("{:04}", date.year())
+    } else {
+        format!("{:02}", date.year() % 1000)
+    };
 
     let file_name = match order {
         DateOrder::DMY => format!("{d}{sep}{m}{sep}{y}"),
