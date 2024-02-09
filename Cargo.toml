@@ -1,5 +1,5 @@
 [package]
-name = "day"
+name = "cargo-day"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,5 +11,4 @@ chrono = "0.4"
 clap = { version = "4.5.0", features = ["derive"] }
 confy = "0.6"
 serde = { version = "1.0", features = ["derive"] }
-iro = { git = "https://github.com/joseburgosguntin/iro" }
 color-print = "0.3.5"

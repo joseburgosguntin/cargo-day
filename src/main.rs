@@ -2,7 +2,7 @@ use std::fmt::Display;
 
 use chrono::{Datelike, Local};
 use clap::{Parser, ValueEnum};
-use iro::{iformat, iprintln};
+use color_print::cprintln;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, ValueEnum, Serialize, Deserialize)]
@@ -75,7 +75,7 @@ fn main() -> anyhow::Result<()> {
         DateOrder::MDY => format!("{m}{sep}{d}{sep}{y}"),
         DateOrder::YMD => format!("{y}{sep}{m}{sep}{d}"),
     };
-    iprintln!("<b>Successfully created <m>{}.{}</>", file_name, ext);
+    cprintln!("<b>Successfully created <m>{}.{}</>", file_name, ext);
 
     std::fs::File::create(format!("{file_name}.{ext}"))?;
 

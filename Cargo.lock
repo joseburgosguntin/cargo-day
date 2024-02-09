@@ -96,6 +96,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f30e7476521f6f8af1a1c4c0b8cc94f0bee37d91763d0ca2665f299b6cd8aec"
 
 [[package]]
+name = "cargo-day"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "clap",
+ "color-print",
+ "confy",
+ "serde",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -210,19 +222,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "06ea2b9bc92be3c2baa9334a323ebca2d6f074ff852cd1d7b11064035cd3868f"
 
 [[package]]
-name = "day"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "clap",
- "color-print",
- "confy",
- "iro",
- "serde",
-]
-
-[[package]]
 name = "directories"
 version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -303,14 +302,6 @@ checksum = "824b2ae422412366ba479e8111fd301f7b5faece8149317bb81925979a53f520"
 dependencies = [
  "equivalent",
  "hashbrown",
-]
-
-[[package]]
-name = "iro"
-version = "0.1.0"
-source = "git+https://github.com/joseburgosguntin/iro#effb2de8e541addb49b3c32a1ac49b15c925fe3e"
-dependencies = [
- "color-print",
 ]
 
 [[package]]
