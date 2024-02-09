@@ -1,0 +1,15 @@
+[package]
+name = "day"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.79"
+chrono = "0.4"
+clap = { version = "4.5.0", features = ["derive"] }
+confy = "0.6"
+serde = { version = "1.0", features = ["derive"] }
+iro = { git = "https://github.com/joseburgosguntin/iro" }
+color-print = "0.3.5"
