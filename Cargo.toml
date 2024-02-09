@@ -3,7 +3,7 @@ name = "cargo-day"
 version = "0.1.1"
 edition = "2021"
 license = "GPL-3.0-only"
-description = "☀️daily touch command"
+description = "☀️ daily touch command"
 repository = "https://github.com/joseburgosguntin/cargo-day"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
